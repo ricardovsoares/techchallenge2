@@ -34,6 +34,9 @@
         <mxCell id="imOLtHNhUNgTjf9dVmzc-6" parent="UEzPUAAOIrF-is8g5C7q-74" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.bucket;" value="AWS S3" vertex="1">
           <mxGeometry height="78" width="75" x="540" y="43" as="geometry" />
         </mxCell>
+        <mxCell id="imOLtHNhUNgTjf9dVmzc-26" parent="UEzPUAAOIrF-is8g5C7q-74" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.athena;fillColor=#F58534;gradientColor=none;" value="" vertex="1">
+          <mxGeometry height="76.5" width="76.5" x="361" y="343" as="geometry" />
+        </mxCell>
         <mxCell id="imOLtHNhUNgTjf9dVmzc-15" edge="1" parent="1" source="UEzPUAAOIrF-is8g5C7q-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="imOLtHNhUNgTjf9dVmzc-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
