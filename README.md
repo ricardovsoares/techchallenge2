@@ -1,1 +1,30 @@
-O projeto possui uma arquitetura orientada a pipeline batch. Os dados de ações e índices da B3 são extraídos diariamente por um processo em Python e armazenados na camada bruta do Amazon S3 em formato Parquet com partição por data. A entrada de novos arquivos no bucket dispara uma função AWS Lambda, cuja responsabilidade é iniciar o job de ETL no AWS Glue. O Glue processa os dados, aplica transformações analíticas obrigatórias, grava a camada refinada também em Parquet com partições por data e ticker, e registra a estrutura no Glue Catalog. Por fim, os dados ficam disponíveis para consulta SQL no Amazon Athena, permitindo análises e validação dos requisitos do desafio.
+
+# Tech Challenge: Fase 2
+
+## Visão Geral da Solução
+Esse projeto impelmenta um pipeline batch de dados financeiros da B3 utilizando serviços da Amazon Web Services (AWS). O objetivo é construir uma solução robusta e escalável para ingestão, transformação e consulta de dados de ações e índices, seguindo as melhores práticas de engenharia de dados. O pipeline é projetado para operar diariamente, garantindo que os dados estejam sempre atualizados e prontos para análise.A arquitetura proposta envolve a extração de dados via yfinance, armazenamento em um bucket S3 na camada "raw", orquestração via AWS Lambda e AWS Glue para processamento ETL (Extract, Transform, Load), e disponibilização para consultas analíticas através do Amazon Athena, com o schema gerenciado pelo AWS Glue Data Catalog.Este guia fornece todo o código necessário, instruções de configuração, políticas IAM mínimas, permitindo adaptação da solução com agilidade.
+
+## Arquitura
+
+![](./assets/Diagrama.jpg)
+
+### Camadas
+#### Camada 1 — Ingestão
+Python script
+coleta dados da B3
+grava em Parquet no S3 raw
+
+#### Camada 2 — Orquestração
+evento do S3
+Lambda dispara Glue Job
+
+#### Camada 3 — Transformação
+Glue ETL
+aplica regras de negócio
+grava refined
+
+#### Camada 4 — Catálogo
+Glue Catalog registra schema e partições
+
+#### Camada 5 — Consumo
+Athena consulta com SQL

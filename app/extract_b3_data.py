@@ -5,7 +5,7 @@ from datetime import datetime
 import io
 
 # Configurações
-BUCKET_NAME = "seu-bucket-b3-tech-challenge"
+BUCKET_NAME = "b3-tech-challenge-ricardo"
 TICKERS = ["PETR4.SA", "VALE3.SA", "ITUB4.SA", "^BVSP"]
 DATE_STR = datetime.now().strftime("%Y-%m-%d")
 
